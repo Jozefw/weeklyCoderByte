@@ -1,28 +1,26 @@
 function LongestWord(sen) { 
   
-var temp = [],
-  wSplit = [],
-   twins = [],
-   bigWord;
+var bigWord = [],
+     wSplit = [];
   
 wSplit = sen.split(" ");
 wSplit.sort(function(a,b){return a.length-b.length;});
 console.log(wSplit);
   
-//   check for game length eq two
-  if ( wSplit.length === 2 ) {
-    console.log("end of game" + " " + wSplit[0]);
-    return wSplit[0];
-  }
+//   check for game length
   
+ if ( wSplit.length === 1 ) {
+   console.log(wSplit[0]);
+   return wSplit;
+ } 
+  else if ( wSplit.length === 2 && wSplit[0].length === wSplit[1].length ) {
+      console.log("end of game" + " " + wSplit[0]);
+      return wSplit[0];
+  }
   else {
-    for ( var i = 0; i< wSplit.length-1; i++ ) {
-       if ( wSplit[i].length === wSplit[i+1].length ) {
-         twins = wSplit[i];
-         console.log(twins + " win");
-       }
-    }
-  }       
+    bigWord = wSplit.pop();
+    console.log(bigWord);
+  }  
 }
 
-LongestWord("it is a");
+LongestWord("it a a bomb");
