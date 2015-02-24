@@ -1,22 +1,32 @@
 function LetterChanges(str) { 
   var lwrCase = [],
   temp = [],
-  nextLetter,
-  capVowel;
+  nextLetter=[],
+  unCap,
+  changedVowel,
+  capVowel=[];
+  
 // chang to lower case
   lwrCase = str.toLowerCase();
-  console.log(typeof lwrCase);
+  console.log(lwrCase);
 //   change to ascii
   for ( var i = 0; i <lwrCase.length; i++ ) {
-    if ( lwrCase[i] === 32 ) {
-      lwrCase[i] = 32;
+   temp.push(lwrCase.charCodeAt(i) + 1);
+    if ( temp[i] === 33 ) {
+      temp[i] = 32;
     }
-    else { temp.push(lwrCase.charCodeAt(i) + 1);}
+    nextLetter.push(String.fromCharCode(temp[i]));
+    unCap = nextLetter.join("");
     
   }
-  
-  console.log(temp);
-         
+  for ( var j = 0; j<unCap.length; j++ ) {
+      capVowel.push(unCap[j]);
+        if ( capVowel[j] === "a" || capVowel[j]  === "e" || capVowel[j]  === "i" || capVowel[j]  === "o" ||capVowel[j]  === "u" ) {
+          capVowel[j] = capVowel[j].toUpperCase();
+    }
+  }
+  capVowel = capVowel.join("");
+  console.log(capVowel + " answer");      
 }
 
-LetterChanges("helL");
+LetterChanges("helL o");
