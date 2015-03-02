@@ -1,17 +1,17 @@
 function SimpleSymbols(str) { 
-  for ( var j = 0; j<str.length; j++ ) {
-    if ( str[0] != "+" && str[str.length] != "+" ) {
-      console.log("not surrounded");
-    }
-    else {
-      for ( var i = 1; i<str.length-1; i++ ) {
-        if ( str[i-1] === "+" && str[i+1] === "+" ) {
-          console.log("ok");
-//           need a counter
-        }
+   var strSplit= str.split("");
+   var solution = true;
+  console.log(strSplit);
+      if ( strSplit[0] === /[a-z]/gi || (strSplit[strSplit.length] === [a-z]/gi)) {
+    solution = false;
+        console.log(solution);
       }
+  for ( var i= 1; i<strSplit.length-1; i++ ) {
+    if ( strSplit[i] === [a-z]/gi && strSplit[0] != "+" && strSplit[i+1] != "+" ) {
+      solution = false;
     }
-  }       
+  }
+  console.log(answer);
 }
 
-SimpleSymbols("+t+rr+");
+SimpleSymbols("+t+r+");
