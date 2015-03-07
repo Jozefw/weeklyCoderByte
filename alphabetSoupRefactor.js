@@ -3,26 +3,30 @@ function AlphabetSoup(str) {
     var temp = [];
     var solution = [];
     str = str.toLowerCase();
-  console.log(str);
-
+    console.log(str);
+  
     function toAscii(str) {
       for ( var j = 0; j < str.length; j++ ) {
         temp.push(str.charCodeAt(j));
         temp = temp.sort(function(a,b){return a-b;});
       }
-      console.log(temp);
-      return toLetter(temp);
+
+      toLetter(temp);
     }
 
+  
     function toLetter(ascii) {
      for ( var i = 0; i < ascii.length; i++ ) {
       solution.push( String.fromCharCode(ascii[i] )); 
-
      }
        console.log(solution + " solution");
-       return solution;
+       alert(solution);
+     return solution;
     }
-  return toAscii(str);
+  
+  
+  toAscii(str);
+  return solution;
 }
 
 alert(AlphabetSoup("geTTing"));
