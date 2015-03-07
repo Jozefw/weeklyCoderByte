@@ -21,7 +21,7 @@ function AlphabetSoup(str) {
      }
        console.log(solution + " solution");
        alert(solution);
-     return solution;
+    
     }
   
   
