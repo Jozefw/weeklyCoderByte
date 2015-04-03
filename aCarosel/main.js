@@ -16,7 +16,7 @@ $backward.on("click", backClick);
 $forward.on("click", forwardClick);
 
  function backClick(event) {
- event.preventDefault();
+ // event.preventDefault();
    if ( currentImageindex > 0 ) {
  	    currentImageindex --;
  		  $('#imageContainer').attr('src', imageArray[currentImageindex]);
@@ -25,7 +25,7 @@ $forward.on("click", forwardClick);
  }
 
  function forwardClick(event) {
- 	event.preventDefault;
+ 	// event.preventDefault;
  	if ( currentImageindex < imageArray.length-1 ) {
  		currentImageindex++;
  		$('#imageContainer').attr('src', imageArray[currentImageindex]);
